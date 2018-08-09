@@ -11,16 +11,11 @@ from sqlalchemy import create_engine
 from flask import Flask, jsonify, render_template
 app = Flask(__name__)
 
-
-#################################################
-# Database Setup
-#################################################
 dbfile = os.path.join('db', 'belly_button_biodiversity.sqlite')
 engine = create_engine(f"sqlite:///{dbfile}")
 
-# reflect an existing database into a new model
 Base = automap_base()
-# reflect the tables
+
 Base.prepare(engine, reflect=True)
 
 # Save references to each table
@@ -28,7 +23,7 @@ Samples_Metadata = Base.classes.samples_metadata
 OTU = Base.classes.otu
 Samples = Base.classes.samples
 
-# Create our session (link) from Python to the DB
+# Create session (link) from Python to the DB
 session = Session(engine)
 
 
