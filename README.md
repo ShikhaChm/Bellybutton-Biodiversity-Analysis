@@ -197,7 +197,3 @@ The following task is completely optional
 * Use Bootstrap to structure your HTML template.
 
 * Use Pandas inside of your Flask routes to help format, filter, or sort the data before converting to JSON
-
-## Copyright
-
-Trilogy Education Services © 2017. All Rights Reserved.
